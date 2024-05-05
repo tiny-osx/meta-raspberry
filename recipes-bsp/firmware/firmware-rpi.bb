@@ -10,16 +10,15 @@ PROVIDES += "virtual/bootloader"
 COMPATIBLE_MACHINE = "^rpi$"
 INHIBIT_DEFAULT_DEPS = "1"
 
+BB_STRICT_CHECKSUM = "0"
+WARN_QA:remove = "src-uri-bad buildpaths"
+
 # SRC_URI  = "file://firmware-${FIRMWARE_BRANCH}.tar.gz"
 SRC_URI  = "https://github.com/raspberrypi/firmware/archive/refs/heads/${FIRMWARE_BRANCH}.tar.gz"
 SRC_URI += "file://cmdline.txt"
 SRC_URI += "file://config.txt"
 
-SRC_URI[sha256sum] = "c70d834eef17b0b624717d353c15acfe0d3a749a69a75dcb3fe37f0bd9031346"
-
 S = "${WORKDIR}/firmware-${FIRMWARE_BRANCH}/boot"
-
-# WARN_QA:remove = "src-uri-bad buildpaths"
 
 do_deploy() {
     install -d ${DEPLOYDIR}/boot
