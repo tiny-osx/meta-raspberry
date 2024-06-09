@@ -22,7 +22,15 @@ S = "${WORKDIR}/firmware-${FIRMWARE_BRANCH}/boot"
 
 do_deploy() {
     install -d ${DEPLOYDIR}/boot
-    install -m 0644 ${S}/bootcode.bin ${S}/start4.elf ${S}/fixup4.dat ${DEPLOYDIR}/boot
+    install -m 0644 ${S}/bootcode.bin ${DEPLOYDIR}/boot
+    install -m 0644 ${S}/start.elf ${S}/fixup.dat ${DEPLOYDIR}/boot
+    install -m 0644 ${S}/start_x.elf ${S}/fixup_x.dat ${DEPLOYDIR}/boot
+    install -m 0644 ${S}/start_cd.elf ${S}/fixup_cd.dat ${DEPLOYDIR}/boot
+    install -m 0644 ${S}/start_db.elf ${S}/fixup_db.dat ${DEPLOYDIR}/boot
+    install -m 0644 ${S}/start4.elf ${S}/fixup4.dat ${DEPLOYDIR}/boot
+    install -m 0644 ${S}/start4x.elf ${S}/fixup4x.dat ${DEPLOYDIR}/boot
+    install -m 0644 ${S}/start4cd.elf ${S}/fixup4cd.dat ${DEPLOYDIR}/boot
+    install -m 0644 ${S}/start4db.elf ${S}/fixup4db.dat ${DEPLOYDIR}/boot
     install -m 0644 ${S}/LICENCE.broadcom ${DEPLOYDIR}/boot
     install -m 0644 ${WORKDIR}/config.txt ${WORKDIR}/cmdline.txt ${DEPLOYDIR}/boot   
 }

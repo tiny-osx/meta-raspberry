@@ -29,8 +29,11 @@ IMAGE_FSTYPES  ?= "tar.gz wic.gz wic.bmap"
 # "
 
 MACHINE_FEATURES = " \
+    wifi \
+    usbhost \
     keyboard \
     usbgadget \
+    bluetooth \
 "
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " \
