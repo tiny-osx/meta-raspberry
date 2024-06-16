@@ -41,9 +41,13 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " \
     udev-rules-rpi \
 "
 
+MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS +=" \
+    kernel-module-i2c-dev \
+    kernel-module-i2c-bcm2708 \
+"
+
 KERNEL_DEVICETREE_OVERLAYS ?= " \
     overlays/overlay_map.dtb \
-    overlays/at86rf233.dtbo \
     overlays/disable-bt.dtbo \
     overlays/disable-wifi.dtbo \
     overlays/dwc2.dtbo \
@@ -57,28 +61,23 @@ KERNEL_DEVICETREE_OVERLAYS ?= " \
     overlays/imx219.dtbo \
     overlays/imx477.dtbo \
     overlays/imx708.dtbo \
-    overlays/iqaudio-dac.dtbo \
-    overlays/iqaudio-dacplus.dtbo \
-    overlays/mcp2515-can0.dtbo \
-    overlays/mcp2515-can1.dtbo \
-    overlays/mcp3008.dtbo \
     overlays/miniuart-bt.dtbo \
     overlays/pps-gpio.dtbo \
     overlays/rpi-ft5406.dtbo \
     overlays/rpi-poe.dtbo \
-    overlays/vc4-fkms-v3d.dtbo \
-    overlays/vc4-fkms-v3d-pi4.dtbo \
     overlays/vc4-kms-v3d.dtbo \
     overlays/vc4-kms-v3d-pi4.dtbo \
-    overlays/vc4-kms-v3d-pi5.dtbo \
     overlays/vc4-kms-dsi-7inch.dtbo \
-    overlays/w1-gpio.dtbo \
-    overlays/w1-gpio-pullup.dtbo \
-    overlays/wm8960-soundcard.dtbo \
+    overlays/vc4-kms-dsi-waveshare-panel.dtbo \
 "
 
 KERNEL_DEVICETREE ?= " \
     ${KERNEL_DEVICETREE_OVERLAYS} \
+"
+
+KERNEL_MODULE_AUTOLOAD += " \
+    i2c-dev \
+    i2c-bcm2708 \
 "
 
 WKS_FILE_DEPENDS ?= " \

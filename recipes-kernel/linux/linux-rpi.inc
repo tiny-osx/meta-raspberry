@@ -16,7 +16,10 @@ PV = "${LINUX_VERSION}+git${SRCPV}"
 KCONFIG_MODE="--alldefconfig"
 KBUILD_DEFCONFIG:raspberrypi5 ?= "bcm2712_defconfig"
 KBUILD_DEFCONFIG:raspberrypi4 ?= "bcm2711_defconfig"
-KBUILD_DEFCONFIG:raspberrypi0-2w ?= "bcmrpi3_defconfig"
+KBUILD_DEFCONFIG:raspberrypi3 ?= "bcm2711_defconfig"
+KBUILD_DEFCONFIG:raspberrypi0-2w ?= "bcm2711_defconfig"
+
+# bcm2835_defconfig
 
 KERNEL_VERSION_SANITY_SKIP="1"
 KERNEL_DTC_FLAGS += "-@ -H epapr"
