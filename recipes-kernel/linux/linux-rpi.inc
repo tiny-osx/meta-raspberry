@@ -19,8 +19,6 @@ KBUILD_DEFCONFIG:raspberrypi4 ?= "bcm2711_defconfig"
 KBUILD_DEFCONFIG:raspberrypi3 ?= "bcm2711_defconfig"
 KBUILD_DEFCONFIG:raspberrypi0-2w ?= "bcm2711_defconfig"
 
-# bcm2835_defconfig
-
 KERNEL_VERSION_SANITY_SKIP="1"
 KERNEL_DTC_FLAGS += "-@ -H epapr"
 
@@ -28,8 +26,6 @@ SRC_URI  = "git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;b
 SRC_URI += "git://github.com/raspberrypi/linux.git;name=machine;branch=${LINUX_BRANCH};protocol=https"
 SRC_URI += "file://vc4graphics-enable.cfg"
 SRC_URI += "file://powersave-enable.cfg"
-SRC_URI += "file://usbether-enable.cfg"
-# SRC_URI += "file://legacy-ptys-enable.cfg"
 
 SRC_URI:append:raspberrypi4 = " \
     file://rpi4-nvmem-enable.cfg \

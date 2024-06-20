@@ -1,0 +1,10 @@
+require linux-rpi.inc
+
+LINUX_VERSION = "6.6.22"
+LINUX_BRANCH = "rpi-6.6.y"
+LINUX_KMETA_BRANCH ?= "yocto-6.6"
+
+SRCREV_meta = "6a24861d6504575a4a9f92366285332d47c7e111"
+SRCREV_machine = "c04af98514c26014a4f29ec87b3ece95626059bd"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"

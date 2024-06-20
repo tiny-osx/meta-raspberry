@@ -5,11 +5,12 @@
 SOC_FAMILY = "rpi"
 include conf/machine/include/soc-family.inc
 
-PREFERRED_VERSION_linux-rpi ??= "6.1.%"
+PREFERRED_VERSION_linux-rpi ??= "6.6.%"
 PREFERRED_PROVIDER_virtual/kernel ??= "linux-rpi"
 PREFERRED_PROVIDER_virtual/firmware ??= "firmware-rpi"
 
 KERNEL_IMAGETYPE = "Image"
+# KERNEL_PACKAGE_NAME = "kernel-v8"
 EXTRA_IMAGEDEPENDS += "firmware-rpi"
 
 WKS_FILE ?= "raspberrypi.wks"

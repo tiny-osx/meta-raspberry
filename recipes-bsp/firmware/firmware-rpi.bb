@@ -4,21 +4,25 @@ LIC_FILES_CHKSUM = "file://LICENCE.broadcom;md5=c403841ff2837657b2ed8e5bb474ac8d
 
 inherit deploy nopackages
 
-FIRMWARE_BRANCH = "stable" 
+# FIRMWARE_BRANCH = "stable" 
 PROVIDES += "virtual/bootloader"
 
 COMPATIBLE_MACHINE = "^rpi$"
 INHIBIT_DEFAULT_DEPS = "1"
 
-BB_STRICT_CHECKSUM = "0"
-WARN_QA:remove = "src-uri-bad buildpaths"
+# BB_STRICT_CHECKSUM = "0"
+# WARN_QA:remove = "src-uri-bad buildpaths"
 
+SRCREV = "3590de0c181d433af368a95f15bc480bdaff8b47"
+SRC_URI[sha256sum] = "a116479e4e8e3bae354860d00321e5df5010cdbe10a3db9e59c81858a0aec84d"
+SRC_URI = "https://codeload.github.com/raspberrypi/firmware/tar.gz/${SRCREV};downloadfilename=${BPN}-${PV}.tar.gz"
 # SRC_URI  = "file://firmware-${FIRMWARE_BRANCH}.tar.gz"
-SRC_URI  = "https://github.com/raspberrypi/firmware/archive/refs/heads/${FIRMWARE_BRANCH}.tar.gz"
+# SRC_URI  = "https://github.com/raspberrypi/firmware/archive/refs/heads/${FIRMWARE_BRANCH}.tar.gz"
 SRC_URI += "file://cmdline.txt"
 SRC_URI += "file://config.txt"
 
-S = "${WORKDIR}/firmware-${FIRMWARE_BRANCH}/boot"
+S = "${WORKDIR}/firmware-${SRCREV}/boot"
+# S = "${WORKDIR}/firmware-${FIRMWARE_BRANCH}/boot"
 
 do_deploy() {
     install -d ${DEPLOYDIR}/boot
