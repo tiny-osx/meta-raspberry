@@ -30,28 +30,3 @@ SRC_URI += "file://powersave-enable.cfg"
 SRC_URI:append:raspberrypi4 = " \
     file://rpi4-nvmem-enable.cfg \
 "
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-# addtask deploy before do_package after do_install
-# do_deploy[dirs] += "${KERNEL_IMAGEDEST}/firmware"
-
-# FILES:${KERNEL_PACKAGE_NAME}-image = "/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}.gz"
-# ARCH = "sh"
-# KERNEL_OUTPUT = "arch/${ARCH}/boot/${KERNEL_IMAGETYPE}"
-
-# DEPLOYDEP = ""
-# do_deploy[depends] += "${DEPLOYDEP}"
