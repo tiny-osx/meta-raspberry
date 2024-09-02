@@ -39,6 +39,11 @@ MACHINE_FEATURES = " \
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " \
     kernel-modules \
+    kernel-module-u-ether \
+    kernel-module-u-serial \
+    kernel-module-usb-f-rndis \
+    kernel-module-usb-f-ecm \
+    kernel-module-usb-f-acm \
     udev-rules-rpi \
 "
 
@@ -79,6 +84,7 @@ KERNEL_DEVICETREE ?= " \
 KERNEL_MODULE_AUTOLOAD += " \
     i2c-dev \
     i2c-bcm2708 \
+    libcomposite \
 "
 
 # WKS_FILE_DEPENDS ?= " \
@@ -94,9 +100,20 @@ WKS_FILE_DEPENDS ?= " \
     bmap-tools-native \
     rpiboot-tools-native \
 "
+# SERIAL_CONSOLES = "115200;ttyGS0 115200;ttyS0 115200;ttyS1 115200;ttyAMA0 115200;ttyAMA10"
+# SERIAL_CONSOLES_CHECK = "${SERIAL_CONSOLES}"
 
-SERIAL_CONSOLES = "115200;ttyS0 115200;ttyS1 115200;ttyAMA0 115200;ttyAMA10"
-SERIAL_CONSOLES_CHECK ??= "${SERIAL_CONSOLES}"
+# SERIAL_CONSOLES = "115200;ttyGS0"
+# SERIAL_CONSOLE:append:raspberrypi0-2w = "115200;ttyS0"
+# SERIAL_CONSOLE:append:raspberrypi3 = "115200;ttyS0"
+# SERIAL_CONSOLE:append:raspberrypi4 = "115200;ttyS0"
+# SERIAL_CONSOLE:append:raspberrypi5 = "115200;ttyAMA10"
+
+# KERNEL_CONSOLE:intel-corei7-64 = "ttyUSB0"
+
+# SERIAL_CONSOLES = "115200;ttyGS0 115200;ttyS0 115200;ttyS1 115200;ttyAMA0 115200;ttyAMA10"
+# SERIAL_CONSOLES_CHECK = "${SERIAL_CONSOLES}"
+# SERIAL_CONSOLES =+ "115200;ttyGS0"
 
 def make_dtb_boot_files(d):
 

@@ -36,13 +36,16 @@ disable_overscan=1
 # Run as fast as firmware / board allows
 arm_boost=1
 
+# Enable dwc2 device/gadget mode
+dtoverlay=dwc2,dr_mode=peripheral
+
 [cm4]
 # Enable host mode on the 2711 built-in XHCI USB controller.
-otg_mode=1
+# otg_mode=1
 
 [pi5]
 # Enable console debug on header pins 14/15
 dtparam=uart0_console=on
 
 [cm5]
-dtoverlay=dwc2,dr_mode=host
+# dtoverlay=dwc2,dr_mode=host
