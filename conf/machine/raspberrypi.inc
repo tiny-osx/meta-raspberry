@@ -10,24 +10,10 @@ PREFERRED_PROVIDER_virtual/kernel ??= "linux-rpi"
 PREFERRED_PROVIDER_virtual/firmware ??= "firmware-rpi"
 
 KERNEL_IMAGETYPE = "Image"
-# KERNEL_PACKAGE_NAME = "kernel-v8"
 EXTRA_IMAGEDEPENDS += "firmware-rpi"
 
 WKS_FILE ?= "raspberrypi.wks"
 IMAGE_FSTYPES  ?= "tar.gz wic.gz wic.bmap"
-
-# MACHINE_FEATURES = " \
-#     touchscreen \
-#     usbgadget \
-#     keyboard \
-#     bluetooth \
-#     screen \
-#     wifi \  
-#     sdio \
-#     vfat \
-#     ext2 \
-#     alsa \
-# "
 
 MACHINE_FEATURES = " \
     wifi \
@@ -39,11 +25,6 @@ MACHINE_FEATURES = " \
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " \
     kernel-modules \
-    kernel-module-u-ether \
-    kernel-module-u-serial \
-    kernel-module-usb-f-rndis \
-    kernel-module-usb-f-ecm \
-    kernel-module-usb-f-acm \
     udev-rules-rpi \
 "
 
@@ -87,33 +68,12 @@ KERNEL_MODULE_AUTOLOAD += " \
     libcomposite \
 "
 
-# WKS_FILE_DEPENDS ?= " \
-#     virtual/bootloader \
-#     usbboot-native \
-#     e2fsprogs-native \
-#     bmap-tools-native \
-# "
-
 WKS_FILE_DEPENDS ?= " \
     virtual/bootloader \
     e2fsprogs-native \
     bmap-tools-native \
     rpiboot-tools-native \
 "
-# SERIAL_CONSOLES = "115200;ttyGS0 115200;ttyS0 115200;ttyS1 115200;ttyAMA0 115200;ttyAMA10"
-# SERIAL_CONSOLES_CHECK = "${SERIAL_CONSOLES}"
-
-# SERIAL_CONSOLES = "115200;ttyGS0"
-# SERIAL_CONSOLE:append:raspberrypi0-2w = "115200;ttyS0"
-# SERIAL_CONSOLE:append:raspberrypi3 = "115200;ttyS0"
-# SERIAL_CONSOLE:append:raspberrypi4 = "115200;ttyS0"
-# SERIAL_CONSOLE:append:raspberrypi5 = "115200;ttyAMA10"
-
-# KERNEL_CONSOLE:intel-corei7-64 = "ttyUSB0"
-
-# SERIAL_CONSOLES = "115200;ttyGS0 115200;ttyS0 115200;ttyS1 115200;ttyAMA0 115200;ttyAMA10"
-# SERIAL_CONSOLES_CHECK = "${SERIAL_CONSOLES}"
-# SERIAL_CONSOLES =+ "115200;ttyGS0"
 
 USE_VT="0"
 
@@ -146,4 +106,51 @@ do_image_wic[depends] += " \
 
 do_image_wic[recrdeps] = "do_build"
 
-RDEPENDS:${KERNEL_PACKAGE_NAME}-base = ""
+# RDEPENDS:${KERNEL_PACKAGE_NAME}-base = ""
+
+# KERNEL_PACKAGE_NAME = "kernel-v8"
+
+# MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " \
+#     kernel-modules \
+#     kernel-module-u-ether \
+#     kernel-module-u-serial \
+#     kernel-module-usb-f-rndis \
+#     kernel-module-usb-f-ecm \
+#     kernel-module-usb-f-acm \
+#     udev-rules-rpi \
+# "
+
+# SERIAL_CONSOLES = "115200;ttyGS0 115200;ttyS0 115200;ttyS1 115200;ttyAMA0 115200;ttyAMA10"
+# SERIAL_CONSOLES_CHECK = "${SERIAL_CONSOLES}"
+
+# SERIAL_CONSOLES = "115200;ttyGS0"
+# SERIAL_CONSOLE:append:raspberrypi0-2w = "115200;ttyS0"
+# SERIAL_CONSOLE:append:raspberrypi3 = "115200;ttyS0"
+# SERIAL_CONSOLE:append:raspberrypi4 = "115200;ttyS0"
+# SERIAL_CONSOLE:append:raspberrypi5 = "115200;ttyAMA10"
+
+# KERNEL_CONSOLE:intel-corei7-64 = "ttyUSB0"
+
+# SERIAL_CONSOLES = "115200;ttyGS0 115200;ttyS0 115200;ttyS1 115200;ttyAMA0 115200;ttyAMA10"
+# SERIAL_CONSOLES_CHECK = "${SERIAL_CONSOLES}"
+# SERIAL_CONSOLES =+ "115200;ttyGS0"
+
+# WKS_FILE_DEPENDS ?= " \
+#     virtual/bootloader \
+#     usbboot-native \
+#     e2fsprogs-native \
+#     bmap-tools-native \
+# "
+
+# MACHINE_FEATURES = " \
+#     touchscreen \
+#     usbgadget \
+#     keyboard \
+#     bluetooth \
+#     screen \
+#     wifi \  
+#     sdio \
+#     vfat \
+#     ext2 \
+#     alsa \
+# "

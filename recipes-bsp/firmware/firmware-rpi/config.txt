@@ -1,5 +1,6 @@
 # For more options and information see
 # http://rptl.io/configtxt
+# https://github.com/raspberrypi/firmware/blob/master/boot/overlays/README
 # Some settings may impact device functionality. See link above for details
 
 # Uncomment some or all of these to enable the optional hardware interfaces
