@@ -45,7 +45,7 @@ dtoverlay=dwc2,dr_mode=peripheral
 
 [pi5]
 # Enable console debug on header pins 14/15
-dtparam=uart0_console=on
+dtparam=uart0_console
 
 [cm5]
 # dtoverlay=dwc2,dr_mode=host

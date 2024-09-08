@@ -115,6 +115,8 @@ WKS_FILE_DEPENDS ?= " \
 # SERIAL_CONSOLES_CHECK = "${SERIAL_CONSOLES}"
 # SERIAL_CONSOLES =+ "115200;ttyGS0"
 
+USE_VT="0"
+
 def make_dtb_boot_files(d):
 
     alldtbs = d.getVar('KERNEL_DEVICETREE')
