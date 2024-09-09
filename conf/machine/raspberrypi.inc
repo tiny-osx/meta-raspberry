@@ -18,7 +18,6 @@ IMAGE_FSTYPES  ?= "tar.gz wic.gz wic.bmap"
 MACHINE_FEATURES = " \
     wifi \
     usbhost \
-    keyboard \
     usbgadget \
     bluetooth \
 "
@@ -71,8 +70,8 @@ KERNEL_MODULE_AUTOLOAD += " \
 WKS_FILE_DEPENDS ?= " \
     virtual/bootloader \
     e2fsprogs-native \
-    bmap-tools-native \
-    rpiboot-tools-native \
+    bmaptool-native \
+    rpiboot-native \
 "
 
 USE_VT="0"
