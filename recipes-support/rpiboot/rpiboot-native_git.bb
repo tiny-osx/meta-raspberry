@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=e3fc50a88d0a364313df4b21ef20c29e"
 SRCREV = "cd6896cbafabad02fef44c815579a91dccd8e04e"
 SRC_URI = "gitsm://github.com/raspberrypi/usbboot.git;protocol=https;branch=master"
 
-inherit native
+inherit pkgconfig native
 
 S = "${WORKDIR}/git"
 
