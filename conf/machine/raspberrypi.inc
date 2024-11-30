@@ -16,10 +16,8 @@ WKS_FILE ?= "raspberrypi.wks"
 IMAGE_FSTYPES  ?= "tar.gz wic.gz wic.bmap"
 
 MACHINE_FEATURES = " \
-    wifi \
     usbhost \
     usbgadget \
-    bluetooth \
 "
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " \

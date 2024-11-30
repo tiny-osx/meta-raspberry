@@ -1,8 +1,8 @@
 # short-description: Create an image for Raspberry Pi.
 # long-description: Creates a partitioned SD card image for Raspberry Pi.
 
-# boot partition (20M)
-part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 4096 --size 20
+# boot partition (1G)
+part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 4096 --size 1024
 
 # root partition (yocto defined)
 part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label root --align 4096

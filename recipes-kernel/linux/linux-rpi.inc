@@ -33,6 +33,7 @@ RDEPENDS:${KERNEL_PACKAGE_NAME}-dbg:raspberrypi-armv7:append = " ${RASPBERRYPI_K
 
 SRC_URI  = "git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=${LINUX_KMETA_BRANCH};destsuffix=kernel-meta"
 SRC_URI += "git://github.com/raspberrypi/linux.git;name=machine;branch=${LINUX_BRANCH};protocol=https"
+SRC_URI += "${@bb.utils.contains('MACHINE_FEATURES', 'rt', 'file://rt-preempt.cfg', '', d)}"
 SRC_URI += "file://vc4graphics-enable.cfg"
 SRC_URI += "file://powersave-enable.cfg"
 
